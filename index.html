@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sangeetanjali | The Soul of Tagore</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terracotta: '#b85c38',
+                        earth: '#3e2f23',
+                        sand: '#f9f6f0',
+                        clay: '#d3bca5'
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Lora"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #f9f6f0; color: #3e2f23; }
+        .glass-card { background: rgba(255, 255, 255, 0.6); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .hover-lift { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(62, 47, 35, 0.1); }
+        .text-balance { text-wrap: balance; }
+        /* To ensure iframes look clean */
+        .fb-iframe-container { position: relative; overflow: hidden; width: 100%; height: 400px; background: #fff; }
+        .fb-iframe-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden selection:bg-terracotta selection:text-sand">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-6 py-4 mix-blend-difference text-sand">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="font-serif text-2xl tracking-widest uppercase">Sangeetanjali</h1>
+            <div class="flex gap-4">
+                <a href="https://www.facebook.com/profile.php?id=100064261382267" target="_blank" class="hover:text-terracotta transition-colors">Facebook</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Replaced Unsplash with the second local JPG for background texture -->
+        <div class="absolute inset-0 bg-[url('Sangita1.jpg')] bg-cover bg-center opacity-10"></div>
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <span class="gsap-hero block text-terracotta font-serif italic text-xl mb-4">The music of Tagore in her veins</span>
+            <h2 class="gsap-hero font-serif text-5xl md:text-7xl lg:text-8xl text-earth leading-tight mb-8">A Multidimensional <br>Euphoria</h2>
+            <p class="gsap-hero text-lg md:text-xl text-earth/80 max-w-2xl mx-auto mb-10 text-balance">
+                Finding serenity and self-discovery through Rabindrik music and poetry.
+            </p>
+            <div class="gsap-hero flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/?text=Namaskaram!%20I%20would%20love%20to%20connect.%0A%0AMy%20Name:%20%0AMy%20Location:%20%0AI%20am%20enquiring%20about%20(Classes/Events/General):%20" 
+                   target="_blank"
+                   class="bg-terracotta text-sand px-8 py-4 rounded-full font-serif tracking-wide hover:bg-earth transition-colors">
+                    Connect on WhatsApp
+                </a>
+                <a href="https://m.me/100064261382267" 
+                   target="_blank"
+                   class="border border-earth text-earth px-8 py-4 rounded-full font-serif tracking-wide hover:bg-earth hover:text-sand transition-colors">
+                    Message on Facebook
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Bio Section -->
+    <section class="py-24 px-6 relative bg-white">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="gsap-fade order-2 md:order-1">
+                <h3 class="font-serif text-4xl text-earth mb-6">The Artist Behind the Soul</h3>
+                <p class="text-lg leading-relaxed text-earth/80 mb-6 text-balance">
+                    A proud graduate of Shantiniketan, she pursued her dreams with unwavering dedication—even taking her graduation exams while eight months pregnant. 
+                </p>
+                <p class="text-lg leading-relaxed text-earth/80 mb-6 text-balance">
+                    She has navigated life as a corporate investor, a school teacher, and a businesswoman. Above all, she remains an artist of integrity, humility, and suave elegance. Her vision is simple: to spread the peace and profound vibe of Tagore's music to everyone seeking serenity.
+                </p>
+            </div>
+            <div class="gsap-img order-1 md:order-2 relative">
+                <div class="aspect-[4/5] overflow-hidden rounded-sm">
+                    <img src="Sangita1.jpg" 
+                         alt="Sangeetanjali" 
+                         class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+                <div class="absolute -bottom-6 -left-6 w-48 h-48 bg-clay/20 -z-10 rounded-full blur-2xl"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Musical Journey (Videos) -->
+    <section class="py-24 px-6 bg-sand">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="gsap-header font-serif text-4xl text-center text-earth mb-16">Melodies & Performances</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- FB Card 1 -->
+                <div class="gsap-card hover-lift glass-card rounded-sm overflow-hidden group flex flex-col">
+                    <div class="fb-iframe-container">
+                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02kMfZ4M3y3C2zjKGywSSpB1fbuyiqjoK8M7UmnKBApALtnpVbDYoyEdDAgTjjbqqul%26id%3D100064261382267&show_text=true&width=500" width="500" height="977" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    <div class="p-6 bg-white/50 grow">
+                        <h4 class="font-serif text-xl mb-2 text-earth">Musical Interpretation</h4>
+                        <p class="text-sm text-earth/70">A deep dive into Rabindrik emotions.</p>
+                    </div>
+                </div>
+
+                <!-- FB Card 2 -->
+                <div class="gsap-card hover-lift glass-card rounded-sm overflow-hidden group flex flex-col">
+                    <div class="fb-iframe-container">
+                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0eRmG5NHq35WDoGypdBMA6NWTweqx7sA4TXXQGv2ib2xZkGJhgYMQ5pWnLg2jry8Ll%26id%3D100064261382267&show_text=true&width=500" width="500" height="329" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    <div class="p-6 bg-white/50 grow">
+                        <h4 class="font-serif text-xl mb-2 text-earth">Live Performance</h4>
+                        <p class="text-sm text-earth/70">Sharing the stage and the soul of Tagore.</p>
+                    </div>
+                </div>
+
+                <!-- FB Card 3 -->
+                <div class="gsap-card hover-lift glass-card rounded-sm overflow-hidden group flex flex-col">
+                    <div class="fb-iframe-container">
+                        <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid02hw7TPWi2EAQhitWPmpwpjRwN3zXcKKTtwdEoDSxwpGhD2bgiFL54x7F3TVB1Z9Xil%26id%3D100064261382267&show_text=true&width=500" width="500" height="871" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    <div class="p-6 bg-white/50 grow">
+                        <h4 class="font-serif text-xl mb-2 text-earth">Vocal Harmony</h4>
+                        <p class="text-sm text-earth/70">Exploring the multidimensional euphoria.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Poetry & Kobita -->
+    <section class="py-24 px-6 bg-earth text-sand">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="gsap-header-dark font-serif text-4xl text-center mb-16">Poetry & Kobita</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="gsap-card-dark hover-lift border border-sand/20 rounded-sm overflow-hidden bg-earth flex flex-col">
+                    <div class="fb-iframe-container">
+                        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F962305056638597%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-terracotta text-sm uppercase tracking-widest mb-2 block">Recitation</span>
+                        <h4 class="font-serif text-xl mb-2">Listen to the verses</h4>
+                        <p class="text-sand/70 font-sans text-sm">Connecting rhythm and soul through profound Bengali literature.</p>
+                    </div>
+                </div>
+
+                <div class="gsap-card-dark hover-lift border border-sand/20 rounded-sm overflow-hidden bg-earth flex flex-col">
+                    <div class="fb-iframe-container">
+                        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1598197731865633%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-terracotta text-sm uppercase tracking-widest mb-2 block">Poetry</span>
+                        <h4 class="font-serif text-xl mb-2">Spoken Word</h4>
+                        <p class="text-sand/70 font-sans text-sm">Expressions interpreted from deep within the heart.</p>
+                    </div>
+                </div>
+
+                <div class="gsap-card-dark hover-lift border border-sand/20 rounded-sm overflow-hidden bg-earth flex flex-col">
+                    <div class="fb-iframe-container">
+                        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1550558046858576%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    <div class="p-6">
+                        <span class="text-terracotta text-sm uppercase tracking-widest mb-2 block">Kobita</span>
+                        <h4 class="font-serif text-xl mb-2">The Path to Self</h4>
+                        <p class="text-sand/70 font-sans text-sm">Stumbling upon peace through poetic cadence.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Life / Fun Moments -->
+    <section class="py-24 px-6 bg-clay/20">
+        <div class="max-w-7xl mx-auto">
+            <h3 class="gsap-header font-serif text-4xl text-center text-earth mb-16">Life, Family & Joy</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <div class="gsap-card hover-lift bg-white p-4 rounded-sm shadow-sm flex flex-col">
+                    <div class="fb-iframe-container mb-4 rounded-sm">
+                         <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0Xn9DxWgX87eU83yb5FK4opqBS6RipqtCEppJi1TpBY8QBs2sFpypSMVLggzCbPjel%26id%3D100064261382267&show_text=true&width=500" width="500" height="466" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    <p class="font-serif text-center text-earth italic mt-auto">Cherished Memories</p>
+                </div>
+
+                <div class="gsap-card hover-lift bg-white p-4 rounded-sm shadow-sm flex flex-col">
+                    <div class="fb-iframe-container mb-4 rounded-sm">
+                         <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid0qv478cHjBDEELFqswhvsdwgXVSJxBgcjyNDyozZnj2XkbeNAWtieEEypEMTvNDD6l%26id%3D100064261382267&show_text=true&width=500" width="500" height="653" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    <p class="font-serif text-center text-earth italic mt-auto">Family & Grace</p>
+                </div>
+
+                <div class="gsap-card hover-lift bg-white p-4 rounded-sm shadow-sm flex flex-col">
+                    <div class="fb-iframe-container mb-4 rounded-sm">
+                         <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fpermalink.php%3Fstory_fbid%3Dpfbid035mWexQyVmC9V7HmxKroYuivmTVA7zeGHmTZT9B6H531zXg5bpycT6PUH6uMFB9X4l%26id%3D100064261382267&show_text=true&width=500" width="500" height="645" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    <p class="font-serif text-center text-earth italic mt-auto">Everyday Suave</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-earth text-sand py-12 px-6 border-t border-sand/10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <h2 class="font-serif text-2xl tracking-widest uppercase">Sangeetanjali</h2>
+            <div class="flex gap-6 text-sm tracking-widest uppercase">
+                <a href="https://www.facebook.com/profile.php?id=100064261382267" target="_blank" class="hover:text-terracotta transition-colors">Facebook</a>
+                <a href="#" class="opacity-50 cursor-not-allowed" title="Coming Soon">Instagram (Soon)</a>
+                <a href="#" class="opacity-50 cursor-not-allowed" title="Coming Soon">YouTube (Soon)</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP Initializations -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Load Animation
+        gsap.from(".gsap-hero", {
+            y: 30,
+            opacity: 0,
+            duration: 1.2,
+            stagger: 0.2,
+            ease: "power3.out",
+            delay: 0.2
+        });
+
+        // Bio Section Animation
+        gsap.from(".gsap-fade", {
+            scrollTrigger: { trigger: ".gsap-fade", start: "top 80%" },
+            y: 40, opacity: 0, duration: 1, ease: "power3.out"
+        });
+        
+        gsap.from(".gsap-img", {
+            scrollTrigger: { trigger: ".gsap-img", start: "top 80%" },
+            x: 40, opacity: 0, duration: 1, ease: "power3.out", delay: 0.2
+        });
+
+        // Sections & Cards Animations
+        const sections = [
+            { header: ".gsap-header", cards: ".gsap-card" },
+            { header: ".gsap-header-dark", cards: ".gsap-card-dark" }
+        ];
+
+        sections.forEach(sec => {
+            gsap.from(sec.header, {
+                scrollTrigger: { trigger: sec.header, start: "top 85%" },
+                y: 20, opacity: 0, duration: 0.8, ease: "power2.out"
+            });
+
+            gsap.from(sec.cards, {
+                scrollTrigger: { trigger: sec.cards, start: "top 85%" },
+                y: 40, opacity: 0, duration: 0.8, stagger: 0.15, ease: "power2.out"
+            });
+        });
+    </script>
+</body>
+</html>
